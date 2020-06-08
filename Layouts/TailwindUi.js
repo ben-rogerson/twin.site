@@ -1,5 +1,5 @@
-import React from './node_modules/react'
-import tw from './node_modules/twin.macro'
+import React from 'react'
+import tw from 'twin.macro'
 
 const Container = tw.div`p-8 pl-64 bg-gray-50 h-screen`
 
