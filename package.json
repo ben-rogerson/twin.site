@@ -1,0 +1,36 @@
+{
+  "name": "twin.site",
+  "description": "",
+  "version": "",
+  "babelMacros": {
+    "twin": {
+      "preset": "styled-components",
+      "autoCssProp": true
+    }
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build && next export",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@tailwindcss/ui": "^0.3.0",
+    "@zeit/next-css": "1.0.1",
+    "next": "latest",
+    "next-fonts": "^1.1.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "styled-components": "5.0.1",
+    "twin.macro": "^1.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "keywords": []
+}
