@@ -1,8 +1,8 @@
 import React from 'react'
-import Main from './../../Layouts/TailwindUi'
+import Main from '../../layouts/tailwindui'
 import 'twin.macro'
 
-export default props => (
+export default () => (
   <Main>
     <div tw="w-full h-screen flex items-center justify-center">
       <h1 tw="text-gray-300 text-2xl leading-9 font-extrabold tracking-tight sm:text-6xl sm:leading-10">

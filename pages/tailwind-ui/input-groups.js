@@ -1,5 +1,5 @@
 import React from 'react'
-import Main from './../../Layouts/TailwindUi'
+import Main from '../../layouts/tailwindui'
 import 'twin.macro'
 
 export default () => (
