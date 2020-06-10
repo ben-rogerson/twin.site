@@ -16,7 +16,7 @@ const Support = ({
     <div
       css={[
         tw`mr-2 text-base xl:text-lg`,
-        hasSupport ? tw`text-purple-500` : tw`text-gray-500`,
+        hasSupport ? tw`text-twin` : tw`text-gray-500`,
       ]}
     >
       {icon}
@@ -50,7 +50,7 @@ const Link = ({ title, url }) => (
     <div
       css={[
         tw`text-2xl pl-1 ml-auto md:ml-0`,
-        url ? tw`text-purple-400 group-hocus:text-gray-400` : tw`text-gray-200`,
+        url ? tw`text-twin group-hocus:text-gray-500` : tw`text-gray-200`,
       ]}
     >
       {Icon.arrowRight}
@@ -79,7 +79,12 @@ export default ({
           <span>{name}</span>
           {isOfficialPlugin && <OfficialSeal />}
         </div>
-        <div tw="group-hocus:text-gray-800 truncate">{urlDisplay}</div>
+        <div tw="flex items-center group-hocus:text-purple-700 space-x-1">
+          <div tw="truncate">{urlDisplay}</div>
+          <div tw="opacity-0 group-hocus:opacity-100 text-gray-400">
+            {Icon.arrowRight}
+          </div>
+        </div>
       </a>
 
       <div tw="md:px-6 md:w-1/3 flex md:py-6 items-start xl:items-center space-x-2">

@@ -1,6 +1,10 @@
 module.exports = {
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        twin: '#9500ff',
+      },
+    },
   },
   plugins: [require('@tailwindcss/ui'), svg],
 }
