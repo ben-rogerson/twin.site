@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import tw, { css } from 'twin.macro'
 import { LogoWhite } from './../components'
 
@@ -11,6 +12,9 @@ const IndexPage = () => (
       `,
     ]}
   >
+    <Head>
+      <title>Twin - Use Tailwind classes within css-in-js libraries</title>
+    </Head>
     <LogoWhite />
   </div>
 )

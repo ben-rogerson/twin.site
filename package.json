@@ -5,7 +5,8 @@
   "babelMacros": {
     "twin": {
       "preset": "styled-components",
-      "autoCssProp": true
+      "autoCssProp": true,
+      "debugProp": true
     }
   },
   "scripts": {

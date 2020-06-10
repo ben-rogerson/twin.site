@@ -1,15 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
-import { ServerStyleSheet, createGlobalStyle } from 'styled-components'
-
-const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'Inter';
-    src: url('/static/fonts/Inter-Regular.ttf');
-    src: url('/static/fonts/Inter-SemiBold.ttf');
-    src: url('/static/fonts/Inter-Bold.ttf');
-  }
-`
+import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -19,7 +10,7 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
         })
 
       const initialProps = await Document.getInitialProps(ctx)
@@ -30,7 +21,7 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        )
+        ),
       }
     } finally {
       sheet.seal()
@@ -48,7 +39,6 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body>
-          <GlobalStyle />
           <Main />
           <NextScript />
         </body>

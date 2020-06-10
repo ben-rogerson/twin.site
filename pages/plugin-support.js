@@ -1,29 +1,60 @@
 import React from 'react'
-import tw from 'twin.macro'
-import { pluginSupportData } from './../data'
+import Head from 'next/head'
+import tw, { css } from 'twin.macro'
+import { pluginSupportData, githubLink, discordLink } from './../data'
 import { Logo, SupportCard } from './../components'
+import { Icon } from './../components'
 
-const Container = tw.div`container text-gray-600 md:space-y-10 pb-16 md:pb-24 pt-8 md:pt-16`
-const Heading = tw.h1`text-3xl font-bold text-gray-800`
-const Introduction = tw.div`space-y-3`
-const Content = tw.main`space-y-5`
-const Support = tw.main`divide-y`
+const Link = tw.a`inline-block text-gray-700 hocus:text-purple-600`
 
 const Page = () => (
-  <Container>
-    <Logo />
-    <Introduction>
-      <Heading>Plugin support</Heading>
-      <p>Here's a list of popular plugins and their support level</p>
-    </Introduction>
-    <Content>
-      <Support>
+  <>
+    <Head>
+      <title>Tailwind plugin support | Twin</title>
+    </Head>
+    <div
+      css={[
+        tw`absolute left-0 top-0 right-0 left-0 right-0 h-8 md:h-16`,
+        css`
+          background: linear-gradient(#db00ff, #fff);
+          opacity: 0.15;
+        `,
+      ]}
+    />
+    <div tw="text-gray-600 space-y-12 md:space-y-15 px-1/12 sm:px-15 xl:px-24 py-8 md:py-16">
+      <div tw="flex items-center relative z-10">
+        <Logo />
+        <div tw="w-full text-right space-x-8 items-center">
+          <Link
+            href={discordLink}
+            target="_blank"
+            tw="text-3xl sm:text-4xl -mb-1"
+            aria-label="Discord link"
+          >
+            {Icon.discord}
+          </Link>
+          <Link
+            href={githubLink}
+            target="_blank"
+            tw="text-2xl sm:text-3xl"
+            aria-label="Github link"
+          >
+            {Icon.github}
+          </Link>
+        </div>
+      </div>
+      <div tw="pt-10">
+        <h1 tw="text-3xl xl:text-4xl text-gray-800 tracking-tight">
+          Tailwind plugin support
+        </h1>
+      </div>
+      <main tw="md:divide-y">
         {pluginSupportData
           .sort((a, b) => b.hasSupport - a.hasSupport)
           .map(SupportCard)}
-      </Support>
-    </Content>
-  </Container>
+      </main>
+    </div>
+  </>
 )
 
 export default Page
