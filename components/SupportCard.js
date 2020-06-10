@@ -79,7 +79,7 @@ export default ({
           <span>{name}</span>
           {isOfficialPlugin && <OfficialSeal />}
         </div>
-        <div tw="flex items-center group-hocus:text-purple-700 space-x-1">
+        <div tw="flex items-center group-hocus:text-black space-x-1">
           <div tw="truncate">{urlDisplay}</div>
           <div tw="opacity-0 group-hocus:opacity-100 text-gray-400">
             {Icon.arrowRight}

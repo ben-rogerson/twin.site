@@ -22,7 +22,10 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "styled-components": "5.0.1",
-    "twin.macro": "^1.1.0"
+    "tailwindcss-aspect-ratio": "^3.0.0",
+    "tailwindcss-gradients": "^3.0.0",
+    "tailwindcss-typography": "^3.1.0",
+    "twin.macro": "^1.4.0"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
