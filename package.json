@@ -25,6 +25,7 @@
     "tailwindcss-aspect-ratio": "^3.0.0",
     "tailwindcss-gradients": "^3.0.0",
     "tailwindcss-typography": "^3.1.0",
+    "timsort": "^0.3.0",
     "twin.macro": "^1.4.0"
   },
   "devDependencies": {
