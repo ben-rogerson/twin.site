@@ -1,5 +1,18 @@
 const pluginSupportData = [
   {
+    name: 'Typography',
+    url: 'https://github.com/tailwindcss/typography',
+    isOfficialPlugin: true,
+    hasSupport: false,
+    supportComingSoon: true,
+    links: [
+      {
+        title: 'GitHub',
+        url: 'https://github.com/tailwindcss/typography',
+      },
+    ],
+  },
+  {
     name: 'Tailwind UI',
     url: 'https://tailwindui.com/documentation',
     isOfficialPlugin: true,

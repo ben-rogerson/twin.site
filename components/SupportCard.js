@@ -4,12 +4,17 @@ import { Icon } from './../components'
 
 const Support = ({
   hasSupport,
+  supportComingSoon,
   icon = hasSupport ? Icon.tick : Icon.cross,
-  label = hasSupport ? 'Supported' : 'Unsupported',
+  label = hasSupport
+    ? 'Supported'
+    : supportComingSoon
+    ? 'Coming soon'
+    : 'Unsupported',
 }) => (
   <div
     css={[
-      tw`text-sm rounded-full px-4 py-1 uppercase tracking-wider inline-flex items-center justify-center cursor-default`,
+      tw`text-sm rounded-full px-4 py-1 uppercase tracking-wider inline-flex items-center justify-center cursor-default whitespace-no-wrap`,
       hasSupport ? tw`bg-purple-100 text-purple-800` : tw`bg-gray-100`,
     ]}
   >
@@ -29,7 +34,7 @@ const OfficialSeal = tw(Icon.tailwind)`inline-block text-2xl text-green-500`
 
 const Link = ({ title, url }) => (
   <a
-    key={title}
+    key={url}
     as={!url && 'div'}
     href={url || null}
     target={url ? '_blank' : null}
@@ -63,11 +68,12 @@ export default ({
   url,
   isOfficialPlugin,
   hasSupport,
+  supportComingSoon,
   notes,
   links,
   urlDisplay = url?.replace('https://github.com/', '').replace('https://', ''),
 }) => (
-  <div key={name}>
+  <div key={url}>
     <div tw="py-7 md:py-4 xl:px-0 md:flex">
       <a
         tw="block sm:w-72 xl:w-96 xl:flex-shrink-0 pb-6 md:pt-6 md:pr-6"
@@ -88,7 +94,7 @@ export default ({
       </a>
 
       <div tw="md:px-6 md:w-1/3 flex md:py-6 items-start xl:items-center space-x-2">
-        <Support {...{ hasSupport }} />
+        <Support {...{ hasSupport, supportComingSoon }} />
       </div>
 
       <div tw="flex flex-col xl:flex-row xl:items-center xl:justify-end divide-y md:divide-y-0 mt-5 md:mt-4 lg:mt-0 md:pl-6 md:ml-auto md:w-56 lg:w-72 xl:w-full">
