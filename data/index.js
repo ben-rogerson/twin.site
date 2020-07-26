@@ -3,8 +3,7 @@ const pluginSupportData = [
     name: 'Typography',
     url: 'https://github.com/tailwindcss/typography',
     isOfficialPlugin: true,
-    hasSupport: false,
-    supportComingSoon: true,
+    hasSupport: true,
     links: [
       {
         title: 'GitHub',
