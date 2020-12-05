@@ -4,6 +4,7 @@ const pluginSupportData = [
     url: 'https://github.com/tailwindcss/typography',
     isOfficialPlugin: true,
     hasSupport: true,
+    hasV2Support: true,
     links: [
       {
         title: 'GitHub',
@@ -12,37 +13,25 @@ const pluginSupportData = [
     ],
   },
   {
-    name: 'Tailwind UI',
-    url: 'https://tailwindui.com/documentation',
+    name: '@tailwindcss/forms',
+    url: 'https://github.com/tailwindlabs/tailwindcss-forms',
     isOfficialPlugin: true,
-    hasSupport: true,
+    supportComingSoonV2: true,
+    hasV2Support: false,
     links: [
       {
-        title: 'Components',
-        url:
-          'https://github.com/ben-rogerson/twin.site/tree/master/pages/tailwind-ui',
+        title: 'GitHub',
+        url: 'https://github.com/tailwindlabs/tailwindcss-forms',
       },
-      { title: 'Demo', url: '/tailwind-ui' },
-      { title: 'Website', url: 'https://tailwindui.com/documentation' },
     ],
   },
   {
-    name: 'Custom forms',
-    url: 'https://github.com/tailwindcss/custom-forms',
-    isOfficialPlugin: true,
-    hasSupport: true,
-    links: [
-      { title: 'CodeSandbox', url: '' },
-      { title: 'Demo', url: 'https://tailwind-custom-forms-twin.netlify.app' },
-      { title: 'GitHub', url: 'https://github.com/tailwindcss/custom-forms' },
-    ],
-  },
-  {
-    name: 'Aspect Ratio',
+    name: '@tailwindcss/aspect-ratio',
     url: 'https://github.com/webdna/tailwindcss-aspect-ratio',
     hasSupport: true,
+    supportComingSoonV2: true,
+    hasV2Support: false,
     links: [
-      { title: 'CodeSandbox', url: '' },
       {
         title: 'GitHub',
         url: 'https://github.com/webdna/tailwindcss-aspect-ratio',
@@ -50,11 +39,11 @@ const pluginSupportData = [
     ],
   },
   {
-    name: 'Typography',
+    name: '@tailwindcss/typography',
     url: 'https://github.com/benface/tailwindcss-typography',
     hasSupport: true,
+    hasV2Support: true,
     links: [
-      { title: 'CodeSandbox', url: '' },
       {
         title: 'GitHub',
         url: 'https://github.com/benface/tailwindcss-typography',
@@ -65,8 +54,9 @@ const pluginSupportData = [
     name: 'Gradients',
     url: 'https://github.com/benface/tailwindcss-gradients',
     hasSupport: true,
+    hasV2Support: false,
+    supportComingSoonV2: true,
     links: [
-      { title: 'CodeSandbox', url: '' },
       {
         title: 'GitHub',
         url: 'https://github.com/benface/tailwindcss-gradients',
