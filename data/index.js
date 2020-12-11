@@ -16,8 +16,7 @@ const pluginSupportData = [
     name: '@tailwindcss/forms',
     url: 'https://github.com/tailwindlabs/tailwindcss-forms',
     isOfficialPlugin: true,
-    supportComingSoonV2: true,
-    hasV2Support: false,
+    hasV2Support: true,
     links: [
       {
         title: 'GitHub',
@@ -29,8 +28,7 @@ const pluginSupportData = [
     name: '@tailwindcss/aspect-ratio',
     url: 'https://github.com/webdna/tailwindcss-aspect-ratio',
     hasSupport: true,
-    supportComingSoonV2: true,
-    hasV2Support: false,
+    hasV2Support: true,
     links: [
       {
         title: 'GitHub',
@@ -54,8 +52,7 @@ const pluginSupportData = [
     name: 'Gradients',
     url: 'https://github.com/benface/tailwindcss-gradients',
     hasSupport: true,
-    hasV2Support: false,
-    supportComingSoonV2: true,
+    hasV2Support: true,
     links: [
       {
         title: 'GitHub',
