@@ -4,20 +4,11 @@ import { Icon } from './../components'
 
 const Support = ({
   hasSupport,
-  hasV2Support,
-  supportComingSoon,
-  supportComingSoonV2,
-  icon = hasSupport || supportComingSoon ? Icon.tick : Icon.cross,
-  iconV2 = hasV2Support || supportComingSoonV2 ? Icon.tick : Icon.cross,
-  labelV1 = hasSupport
-    ? 'v1 support'
-    : supportComingSoon
-    ? 'Coming soon'
-    : 'Unsupported',
-  labelV2 = hasV2Support ? 'v2 support' : supportComingSoonV2 ? 'v2 soon' : '',
+  icon = hasSupport === false ? Icon.cross : Icon.tick,
+  label = hasSupport === false ? 'Unsupported' : 'Supported',
 }) => (
   <>
-    {labelV1 && (
+    {label && (
       <div
         css={[
           tw`text-sm rounded-full px-4 py-1 uppercase tracking-wider inline-flex items-center justify-center cursor-default whitespace-no-wrap`,
@@ -32,25 +23,7 @@ const Support = ({
         >
           {icon}
         </div>
-        {labelV1}
-      </div>
-    )}
-    {labelV2 && (
-      <div
-        css={[
-          tw`text-sm rounded-full px-4 py-1 uppercase tracking-wider inline-flex items-center justify-center cursor-default whitespace-no-wrap`,
-          hasV2Support ? tw`bg-purple-100 text-purple-800` : tw`bg-gray-100`,
-        ]}
-      >
-        <div
-          css={[
-            tw`mr-2 text-base xl:text-lg`,
-            hasV2Support ? tw`text-twin` : tw`text-gray-500`,
-          ]}
-        >
-          {iconV2}
-        </div>
-        {labelV2}
+        {label}
       </div>
     )}
   </>
@@ -58,7 +31,7 @@ const Support = ({
 
 const OfficialSeal = tw(Icon.tailwind)`inline-block text-2xl text-green-500`
 
-const Link = ({ title, url }) => (
+const Link = ({ title, url, hasSupport }) => (
   <a
     key={url}
     as={!url && 'div'}
@@ -73,7 +46,9 @@ const Link = ({ title, url }) => (
     <div
       css={[
         tw`text-xl whitespace-no-wrap`,
-        url ? tw`text-purple-800 group-hocus:text-gray-800` : tw`text-gray-300`,
+        (!hasSupport && tw`text-gray-500`) ||
+          (url && tw`text-purple-800 group-hocus:text-gray-800`) ||
+          tw`text-gray-300`,
       ]}
     >
       {title}
@@ -81,7 +56,9 @@ const Link = ({ title, url }) => (
     <div
       css={[
         tw`text-2xl pl-1 ml-auto md:ml-0`,
-        url ? tw`text-twin group-hocus:text-gray-500` : tw`text-gray-200`,
+        (!hasSupport && tw`text-gray-400`) ||
+          (url && tw`text-twin group-hocus:text-gray-500`) ||
+          tw`text-gray-200`,
       ]}
     >
       {Icon.arrowRight}
@@ -95,6 +72,7 @@ export default ({
   isOfficialPlugin,
   notes,
   links,
+  hasSupport,
   urlDisplay = url?.replace('https://github.com/', '').replace('https://', ''),
   ...rest
 }) => (
@@ -119,11 +97,13 @@ export default ({
       </a>
 
       <div tw="md:px-6 md:w-1/3 flex md:py-6 items-start xl:items-center space-x-2">
-        <Support {...rest} />
+        <Support {...rest} {...{ hasSupport }} />
       </div>
 
       <div tw="flex flex-col xl:flex-row xl:items-center xl:justify-end divide-y md:divide-y-0 mt-5 md:mt-4 lg:mt-0 md:pl-6 md:ml-auto md:w-56 lg:w-72 xl:w-full">
-        {links?.map(Link)}
+        {links?.map(link => (
+          <Link {...link} {...{ hasSupport }} />
+        ))}
       </div>
     </div>
 

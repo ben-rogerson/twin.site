@@ -2,6 +2,7 @@ import React from 'react'
 import Theme from './../components/Theme'
 import 'tailwindcss/dist/base.min.css'
 import { createGlobalStyle } from 'styled-components'
+import MDXProvider from '../components/MDXProvider'
 
 const GlobalStyle = createGlobalStyle`
 /* cyrillic-ext */
@@ -137,8 +138,10 @@ const GlobalStyle = createGlobalStyle`
 
 const App = ({ Component, pageProps }) => (
   <Theme>
-    <GlobalStyle />
-    <Component {...pageProps} />
+    <MDXProvider>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </MDXProvider>
   </Theme>
 )
 

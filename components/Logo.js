@@ -1,7 +1,7 @@
 import React from 'react'
 import 'twin.macro'
 
-const Logo = () => (
+const Logo = props => (
   <a
     href="https://github.com/ben-rogerson/twin.macro"
     target="_blank"
@@ -9,13 +9,13 @@ const Logo = () => (
     tw="inline-block"
     aria-label="GitHub link"
   >
-    <TwinSvg />
+    <TwinSvg {...props} />
   </a>
 )
 
-const TwinSvg = () => (
+const TwinSvg = props => (
   <svg
-    tw="block w-24 sm:w-32"
+    {...props}
     fill="none"
     viewBox="0 0 1063 374"
     xmlns="http://www.w3.org/2000/svg"

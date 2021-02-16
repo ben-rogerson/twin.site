@@ -1,8 +1,9 @@
 import React from 'react'
 import { pluginSupportData } from './../data'
-import LayoutDefault from './../layouts/default'
+import Layout from './../layouts/default'
 import { SupportCard } from './../components'
 import { sort } from 'timsort'
+import 'twin.macro'
 
 const sortBy = [
   {
@@ -35,9 +36,9 @@ const Page = () => {
   // TODO: Cache this data and sort once
   sort(pluginSupportData, multiSort)
   return (
-    <LayoutDefault pageTitle="Tailwind plugin support">
+    <Layout pageTitle="Tailwind plugin support" tw="md:divide-y">
       {pluginSupportData.map(SupportCard)}
-    </LayoutDefault>
+    </Layout>
   )
 }
 

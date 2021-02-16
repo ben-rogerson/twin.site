@@ -15,21 +15,26 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.6.17",
+    "@next/mdx": "^9.5.3",
+    "@tailwindcss/typography": "^0.2.0",
     "@tailwindcss/ui": "^0.3.0",
     "@zeit/next-css": "1.0.1",
     "next": "latest",
     "next-fonts": "^1.1.0",
+    "prism-react-renderer": "^1.1.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-live": "^2.2.2",
     "styled-components": "5.0.1",
     "tailwindcss-aspect-ratio": "^3.0.0",
     "tailwindcss-gradients": "^3.0.0",
     "tailwindcss-typography": "^3.1.0",
     "timsort": "^0.3.0",
-    "twin.macro": "^1.6.2"
+    "twin.macro": "^1.9.0"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^2.1.1"
   },
   "browserslist": [
     ">0.2%",
