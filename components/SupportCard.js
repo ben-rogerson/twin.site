@@ -11,7 +11,7 @@ const Support = ({
     {label && (
       <div
         css={[
-          tw`text-sm rounded-full px-4 py-1 uppercase tracking-wider inline-flex items-center justify-center cursor-default whitespace-no-wrap`,
+          tw`text-sm rounded-full px-4 py-1 uppercase tracking-wider inline-flex items-center justify-center cursor-default whitespace-nowrap`,
           hasSupport ? tw`bg-purple-100 text-purple-800` : tw`bg-gray-100`,
         ]}
       >
@@ -45,7 +45,7 @@ const Link = ({ title, url, hasSupport }) => (
   >
     <div
       css={[
-        tw`text-xl whitespace-no-wrap`,
+        tw`text-xl whitespace-nowrap`,
         (!hasSupport && tw`text-gray-500`) ||
           (url && tw`text-purple-800 group-hocus:text-gray-800`) ||
           tw`text-gray-300`,
@@ -66,7 +66,7 @@ const Link = ({ title, url, hasSupport }) => (
   </a>
 )
 
-export default ({
+const SupportCard = ({
   name,
   url,
   isOfficialPlugin,
@@ -102,7 +102,7 @@ export default ({
 
       <div tw="flex flex-col xl:flex-row xl:items-center xl:justify-end divide-y md:divide-y-0 mt-5 md:mt-4 lg:mt-0 md:pl-6 md:ml-auto md:w-56 lg:w-72 xl:w-full">
         {links?.map(link => (
-          <Link {...link} {...{ hasSupport }} />
+          <Link key={link} {...link} {...{ hasSupport }} />
         ))}
       </div>
     </div>
@@ -114,3 +114,5 @@ export default ({
     )}
   </div>
 )
+
+export default SupportCard

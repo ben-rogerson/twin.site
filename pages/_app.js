@@ -1,5 +1,6 @@
 import React from 'react'
 import Theme from './../components/Theme'
+import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
 import MDXProvider from '../components/MDXProvider'
 import { GlobalStyles } from 'twin.macro'
@@ -139,6 +140,12 @@ const GlobalStyle = createGlobalStyle`
 const App = ({ Component, pageProps }) => (
   <Theme>
     <MDXProvider>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0"
+        />
+      </Head>
       <GlobalStyle />
       <GlobalStyles />
       <Component {...pageProps} />

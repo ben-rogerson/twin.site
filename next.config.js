@@ -1,4 +1,3 @@
-const withCSS = require('@zeit/next-css')
 const withFonts = require('next-fonts')
 const withMDX = require('@next/mdx')()
 
@@ -15,4 +14,4 @@ const config = {
   },
 }
 
-module.exports = withFonts(withCSS(withMDX(config)))
+module.exports = withFonts(withMDX(config))
