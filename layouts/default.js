@@ -50,10 +50,14 @@ const DefaultLayout = ({ pageTitle, title, children, ...rest }) => (
         </div>
       </header>
       <main tw="space-y-12 md:space-y-15">
-        <div tw="pt-10">{typeof title === 'function' ? title : <h1 tw="text-3xl xl:text-4xl text-gray-800 tracking-tight">
-            {title}
-          </h1>}
-          
+        <div tw="pt-10">
+          {typeof title === 'function' ? (
+            title
+          ) : (
+            <h1 tw="text-3xl xl:text-4xl text-gray-800 tracking-tight">
+              {title}
+            </h1>
+          )}
         </div>
         <div {...rest}>{children}</div>
       </main>
