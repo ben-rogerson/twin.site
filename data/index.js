@@ -1,6 +1,6 @@
 const pluginSupportData = [
   {
-    name: 'Typography',
+    name: '@tailwindcss/typography',
     url: 'https://github.com/tailwindcss/typography',
     isOfficialPlugin: true,
     hasSupport: true,
@@ -24,18 +24,31 @@ const pluginSupportData = [
     ],
   },
   {
-    name: '@tailwindcss/aspect-ratio',
-    url: 'https://github.com/webdna/tailwindcss-aspect-ratio',
+    name: '@tailwindcss/line-clamp',
+    url: 'https://github.com/tailwindlabs/tailwindcss-line-clamp',
+    isOfficialPlugin: true,
     hasSupport: true,
     links: [
       {
         title: 'GitHub',
-        url: 'https://github.com/webdna/tailwindcss-aspect-ratio',
+        url: 'https://github.com/tailwindlabs/tailwindcss-line-clamp',
       },
     ],
   },
   {
-    name: '@tailwindcss/typography',
+    name: '@tailwindcss/aspect-ratio',
+    url: 'https://github.com/tailwindlabs/tailwindcss-aspect-ratio',
+    hasSupport: true,
+    isOfficialPlugin: true,
+    links: [
+      {
+        title: 'GitHub',
+        url: 'https://github.com/tailwindlabs/tailwindcss-aspect-ratio',
+      },
+    ],
+  },
+  {
+    name: 'tailwindcss-typography',
     url: 'https://github.com/benface/tailwindcss-typography',
     hasSupport: true,
     links: [
@@ -46,7 +59,7 @@ const pluginSupportData = [
     ],
   },
   {
-    name: 'Gradients',
+    name: 'tailwindcss-gradients',
     url: 'https://github.com/benface/tailwindcss-gradients',
     hasSupport: true,
     links: [
@@ -57,7 +70,7 @@ const pluginSupportData = [
     ],
   },
   {
-    name: 'Dark Mode',
+    name: 'tailwindcss-dark-mode',
     url: 'https://github.com/ChanceArthur/tailwindcss-dark-mode',
     hasSupport: false,
     links: [
@@ -68,7 +81,7 @@ const pluginSupportData = [
     ],
   },
   {
-    name: 'Theming',
+    name: 'tailwindcss-theming',
     url: 'https://github.com/innocenzi/tailwindcss-theming',
     hasSupport: false,
     links: [
@@ -79,7 +92,7 @@ const pluginSupportData = [
     ],
   },
   {
-    name: 'Interaction Variants',
+    name: 'tailwindcss-interaction-variants',
     url: 'https://github.com/benface/tailwindcss-interaction-variants',
     hasSupport: false,
     links: [
@@ -90,7 +103,7 @@ const pluginSupportData = [
     ],
   },
   {
-    name: 'Children',
+    name: 'tailwindcss-children',
     url: 'https://github.com/benface/tailwindcss-children',
     hasSupport: false,
     links: [
@@ -101,7 +114,7 @@ const pluginSupportData = [
     ],
   },
   {
-    name: 'Important',
+    name: 'tailwindcss-important',
     url: 'https://github.com/chasegiunta/tailwindcss-important',
     hasSupport: false,
     links: [
