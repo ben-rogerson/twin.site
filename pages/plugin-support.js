@@ -1,43 +1,35 @@
 import React from 'react'
-import { pluginSupportData } from './../data'
 import Layout from './../layouts/default'
-import { SupportCard } from './../components'
-import { sort } from 'timsort'
 import 'twin.macro'
-
-const sortBy = [
-  {
-    prop: 'hasSupport',
-    direction: -1,
-  },
-  {
-    prop: 'supportComingSoon',
-    direction: 1,
-  },
-]
-
-const multiSort = (a, b) => {
-  let i = 0,
-    result = 0
-  while (i < sortBy.length && result === 0) {
-    result =
-      sortBy[i].direction *
-      (a[sortBy[i].prop] || -1 < b[sortBy[i].prop] || -1
-        ? -1
-        : a[sortBy[i].prop] || -1 > b[sortBy[i].prop] || -1
-        ? 1
-        : 0)
-    i++
-  }
-  return result
-}
+import { Icon } from '../components'
 
 const Page = () => {
-  // TODO: Cache this data and sort once
-  sort(pluginSupportData, multiSort)
   return (
-    <Layout pageTitle="Tailwind plugin support" tw="md:divide-y">
-      {pluginSupportData.map(SupportCard)}
+    <Layout pageTitle="Tailwind plugin support">
+      <span tw="px-8 py-4 text-gray-800 bg-amber-50 border border-amber-200 inline-block rounded">
+        In twin.macro@rc.4, full plugin support was added so any tailwindcss
+        plugin can now be used 🎉
+        <br />
+        <a
+          href="https://github.com/ben-rogerson/twin.macro/releases/tag/3.0.0-rc.4"
+          target="_blank"
+          tw="text-amber-600 hover:text-amber-700"
+        >
+          Release notes
+        </a>
+      </span>
+      <div tw="mt-10">
+        A good list of plugins can be found at
+        <a
+          target="_blank"
+          href="https://github.com/aniftyco/awesome-tailwindcss#plugins"
+          tw="text-black"
+        >
+          <Icon.github tw="inline-block ml-2 mr-1" />
+          awesome-tailwindcss
+        </a>
+        .
+      </div>
     </Layout>
   )
 }

@@ -9,7 +9,7 @@ const Logo = props => (
     tw="inline-block"
     aria-label="GitHub link"
   >
-    <TwinSvg {...props} />
+    {props.children ?? <TwinSvg {...props} />}
   </a>
 )
 

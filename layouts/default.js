@@ -27,7 +27,7 @@ const DefaultLayout = ({ pageTitle, title, children, ...rest }) => (
     </Head>
     <GlobalStyle />
     <TopGradient />
-    <div tw="text-gray-600 space-y-12 md:space-y-15 px-1/12 sm:px-15 xl:px-24 py-8 md:py-16 bg-white">
+    <div tw="text-gray-600 space-y-12 md:space-y-14 px-[8%] sm:px-16 xl:px-24 py-8 md:py-16 bg-white min-h-screen">
       <header tw="flex items-center relative z-10">
         <Logo tw="w-32 sm:w-36" />
         <div tw="w-full text-right space-x-8 items-center">
@@ -37,7 +37,7 @@ const DefaultLayout = ({ pageTitle, title, children, ...rest }) => (
             tw="text-3xl sm:text-4xl -mb-1"
             aria-label="Discord link"
           >
-            {Icon.discord}
+            <Icon.discord />
           </Link>
           <Link
             href={githubLink}
@@ -45,11 +45,11 @@ const DefaultLayout = ({ pageTitle, title, children, ...rest }) => (
             tw="text-2xl sm:text-3xl"
             aria-label="Github link"
           >
-            {Icon.github}
+            <Icon.github />
           </Link>
         </div>
       </header>
-      <main tw="space-y-12 md:space-y-15">
+      <main tw="space-y-12 md:space-y-14">
         <div tw="pt-10">
           {typeof title === 'function' ? (
             title
