@@ -11,15 +11,7 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    // require('tailwindcss-gradients'),
-    // require('tailwindcss-typography'),
-    require('tailwindcss-aspect-ratio'),
-    // require('@tailwindcss/ui'),
-    require('@tailwindcss/typography'),
-    svg,
-    gradients,
-  ],
+  plugins: [require('tailwindcss-aspect-ratio'), svg, gradients],
 }
 
 function svg({ addUtilities }) {
